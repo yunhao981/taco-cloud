@@ -4,7 +4,7 @@ create table if not exists Ingredient (
     type varchar(10) not null
 );
 
-create table if not exists taco (
+create table if not exists Taco (
     id identity,
     name varchar(50) not null,
     createdAt timestamp not null
