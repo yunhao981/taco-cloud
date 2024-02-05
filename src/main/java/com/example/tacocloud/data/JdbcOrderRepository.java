@@ -1,5 +1,8 @@
-package com.example.tacocloud;
+package com.example.tacocloud.data;
 
+import com.example.tacocloud.Order;
+import com.example.tacocloud.Taco;
+import com.example.tacocloud.data.OrderRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -9,6 +12,7 @@ import org.springframework.stereotype.Repository;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Date;
+import java.util.Map;
 
 @Repository
 public class JdbcOrderRepository implements OrderRepository {
@@ -29,7 +33,7 @@ public class JdbcOrderRepository implements OrderRepository {
 
     @Override
     public Order save(Order order) {
-        order.setPlaceAt(new Date());
+        order.setPlacedAt(new Date());
         long orderId = saveOrderDetails(order);
         order.setId(orderId);
         List<Taco> tacos = order.getTacos(0);

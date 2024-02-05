@@ -1,5 +1,7 @@
-package com.example.tacocloud;
+package com.example.tacocloud.web;
 
+import com.example.tacocloud.Order;
+import com.example.tacocloud.Taco;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,6 +16,8 @@ import java.util.stream.Collectors;
 
 import com.example.tacocloud.Ingredient;
 import com.example.tacocloud.Ingredient.Type;
+import com.example.tacocloud.data.IngredientRepository;
+import com.example.tacocloud.data.TacoRepository;
 
 import javax.validation.Valid;
 
@@ -61,8 +65,6 @@ public class DesignTacoController {
                 .stream()
                 .filter(x -> x.getType().equals(type))
                 .collect(Collectors.toList());
-
-
     }
 
     @PostMapping

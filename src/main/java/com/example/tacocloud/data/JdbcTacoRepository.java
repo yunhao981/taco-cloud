@@ -1,5 +1,8 @@
-package com.example.tacocloud;
+package com.example.tacocloud.data;
 
+import com.example.tacocloud.Ingredient;
+import com.example.tacocloud.Taco;
+import com.example.tacocloud.data.TacoRepository;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.core.PreparedStatementCreatorFactory;
